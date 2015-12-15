@@ -1,5 +1,5 @@
 # Metanome-Installation-Guide
-Step by step installation of Metanome Data Profiling Tool
+Step by step installation of Metanome Data Profiling Tool.
 
 
 ##  Debian 8.1
@@ -66,14 +66,14 @@ Download and install [Java-JDK][windows-jdk]:
 Set up the environment, for example:
 * c:\Program Files\Java\jdk1.8.0_45 must be in your JAVA_HOME environment variable. You can add directories to your PATH in the control panel; the details vary by Windows version.
 
-Download [Maven.zip][maven], unzip and set up the environment:
-* c:\apache-maven-"VERSION_NUMBER"\bin must be in your PATH environment variable, just like the J2SE SDK commands. 
+Download [Maven.zip][maven], unzip, copy folder into c:\Program Files\ and set up the environment:
+* c:\Program Files\apache-maven-"VERSION_NUMBER"\bin must be in your PATH environment variable, just like the J2SE SDK commands. 
 
 #### Optional
 Install Node.js, Npm, Bower:
-* Download and install [Node.js][node.js]
+* Download and install [Node.js][node.js].
 * The npm command-line tool is bundled with Node.js.
-* Download and install Bower from command-line interface: ``` $ npm install -g bower```
+* Download and install Bower from command-line interface: ``` $ npm install -g bower```.
 
 ### Metanome installation:
 Download [Metanome][metanome], unzip and then install from command-line interface:
@@ -89,14 +89,24 @@ $ mvn -f deployment/pom.xml package
 *  ``` $ cd deployment-"METANOME_VERSION"-SNAPSHOT ```
 
 ### Run Metanome:
-* Open run.bat
-* Or digit from command-line interface:
- ```
-$ java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml
-```
+* Open run.bat.
+* Or digit from command-line interface: ```$ java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml```
+
+##  Notes
+
+#### Input Data:
+If you encounter any problems with Input Data modal and parser:
+* In ```deployment-"METANOME_VERSION"-SNAPSHOT/db``` folder edit ```metanomedb.script``` file.
+* add input files by hand in this way:
+
+   ```INSERT INTO FILEINPUT VALUES(NULL,'\','"INPUT_DATA_FILENAME.csv"',TRUE,TRUE,'','"',',',FALSE,0,FALSE,"NUMBER_FOR_NEW_INPUT_DATA_FILE")INSERT INTO INPUT VALUES("NUMBER_FOR_NEW_INPUT_DATA_FILE",'"INPUT_DATA_FILENAME.csv"')```
+
+#### Usage:
+See official [Wiki][metanome-wiki].
 
 
 [maven]: <https://maven.apache.org/download.cgi>
 [metanome]: <https://github.com/HPI-Information-Systems/Metanome>
 [windows-jdk]: <http://www.oracle.com/technetwork/java/javase/downloads/index.html>
 [node.js]: <https://nodejs.org/en/>
+[metanome-wiki]: <https://github.com/HPI-Information-Systems/Metanome/wiki>
