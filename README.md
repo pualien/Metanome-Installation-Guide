@@ -54,7 +54,7 @@ Or digit:
  ```
 $ java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml
 ```
-
+Once server has started go to [http://localhost:8888/][http://localhost:8888/]
 
 
 ##  Windows
@@ -76,7 +76,7 @@ Install Node.js, Npm, Bower:
 * Download and install Bower from command-line interface: ``` > npm install -g bower```.
 
 ### Metanome installation:
-Download [Metanome][metanome], unzip and then install from command-line interface:
+Download [Metanome][metanome], unzip **Metanome-master.zip** and then install from command-line interface:
  ```
 > cd Metanome-master
 > mvn clean install
@@ -85,12 +85,13 @@ Download [Metanome][metanome], unzip and then install from command-line interfac
 
 ### Unzip Metanome Snapshot packaged with Jetty Web Server:
 * ``` > cd deployment/target ```
-* Unzip deployment-0.0.2-SNAPSHOT-package_with_jetty.zip
+* Unzip **deployment-0.0.2-SNAPSHOT-package_with_jetty.zip**
 *  ``` > cd deployment-"METANOME_VERSION"-SNAPSHOT ```
 
 ### Run Metanome:
 * Open run.bat.
 * Or digit from command-line interface: ```> java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml```
+* Once server has started go to [http://localhost:8888/][http://localhost:8888/]
 
 ##  Notes
 
@@ -107,6 +108,7 @@ See official [Wiki][metanome-wiki].
 
 [maven]: <https://maven.apache.org/download.cgi>
 [metanome]: <https://github.com/HPI-Information-Systems/Metanome>
+[http://localhost:8888/]: <http://localhost:8888/>
 [windows-jdk]: <http://www.oracle.com/technetwork/java/javase/downloads/index.html>
 [node.js]: <https://nodejs.org/en/>
 [metanome-wiki]: <https://github.com/HPI-Information-Systems/Metanome/wiki>
