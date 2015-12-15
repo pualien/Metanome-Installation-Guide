@@ -73,24 +73,24 @@ Download [Maven.zip][maven], unzip, copy folder into c:\Program Files\ and set u
 Install Node.js, Npm, Bower:
 * Download and install [Node.js][node.js].
 * The npm command-line tool is bundled with Node.js.
-* Download and install Bower from command-line interface: ``` $ npm install -g bower```.
+* Download and install Bower from command-line interface: ``` > npm install -g bower```.
 
 ### Metanome installation:
 Download [Metanome][metanome], unzip and then install from command-line interface:
  ```
-$ cd Metanome-master
-$ mvn clean install
-$ mvn -f deployment/pom.xml package
+> cd Metanome-master
+> mvn clean install
+> mvn -f deployment/pom.xml package
 ```
 
 ### Unzip Metanome Snapshot packaged with Jetty Web Server:
-* ``` $ cd deployment/target ```
+* ``` > cd deployment/target ```
 * Unzip deployment-0.0.2-SNAPSHOT-package_with_jetty.zip
-*  ``` $ cd deployment-"METANOME_VERSION"-SNAPSHOT ```
+*  ``` > cd deployment-"METANOME_VERSION"-SNAPSHOT ```
 
 ### Run Metanome:
 * Open run.bat.
-* Or digit from command-line interface: ```$ java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml```
+* Or digit from command-line interface: ```> java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml```
 
 ##  Notes
 
