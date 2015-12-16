@@ -29,7 +29,7 @@ $ apt-get install npm
 $ npm install -g bower
 ```
 
-### Metanome installation:
+### Metanome installation
 Download [Metanome][metanome], unzip and install:
  ```
 $ unzip Metanome-master.zip
@@ -38,14 +38,14 @@ $ mvn clean install
 $ mvn -f deployment/pom.xml package
 ```
 
-### Unzip Metanome Snapshot packaged with Jetty Web Server:
+### Unzip Metanome Snapshot packaged with Jetty Web Server
  ```
 $ cd deployment/target
 $ unzip deployment-0.0.2-SNAPSHOT-package_with_jetty.zip
 $ cd deployment-"METANOME_VERSION"-SNAPSHOT
 ```
 
-### Run Metanome:
+### Running Metanome
  ```
 $ chmod +x run.sh
 $ ./run.sh
@@ -75,7 +75,7 @@ Install Node.js, Npm, Bower:
 * The npm command-line tool is bundled with Node.js.
 * Download and install Bower from command-line interface: ``` > npm install -g bower```.
 
-### Metanome installation:
+### Metanome installation
 Download [Metanome][metanome], unzip **Metanome-master.zip** and then install from command-line interface:
  ```
 > cd Metanome-master
@@ -83,26 +83,26 @@ Download [Metanome][metanome], unzip **Metanome-master.zip** and then install fr
 > mvn -f deployment/pom.xml package
 ```
 
-### Unzip Metanome Snapshot packaged with Jetty Web Server:
+### Unzip Metanome Snapshot packaged with Jetty Web Server
 * ``` > cd deployment/target ```
 * Unzip **deployment-0.0.2-SNAPSHOT-package_with_jetty.zip**
 *  ``` > cd deployment-"METANOME_VERSION"-SNAPSHOT ```
 
-### Run Metanome:
+### Running Metanome
 * Open run.bat.
 * Or digit from command-line interface: ```> java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml```
 * Once server has started go to [http://localhost:8888/][http://localhost:8888/]
 
 ##  Notes
 
-#### Input Data:
+#### Input Data
 If you encounter any problems with Input Data modal and parser:
 * In ```deployment-"METANOME_VERSION"-SNAPSHOT/db``` folder edit **metanomedb.script** file.
 * add input files by hand in this way:
 
    ```INSERT INTO FILEINPUT VALUES(NULL,'\','"INPUT_DATA_FILENAME.csv"',TRUE,TRUE,'','"',',',FALSE,0,FALSE,"NUMBER_FOR_NEW_INPUT_DATA_FILE")INSERT INTO INPUT VALUES("NUMBER_FOR_NEW_INPUT_DATA_FILE",'"INPUT_DATA_FILENAME.csv"')```
 
-#### Usage:
+#### Usage
 See official [Wiki][metanome-wiki].
 
 
