@@ -100,7 +100,7 @@ If you encounter any problems with Input Data modal and parser:
 * In ```deployment-"METANOME_VERSION"-SNAPSHOT/db``` folder edit **metanomedb.script** file.
 * add input files by hand in this way:
 
-   ```INSERT INTO FILEINPUT VALUES(NULL,'\','"INPUT_DATA_FILENAME.csv"',TRUE,TRUE,'','"',',',FALSE,0,FALSE,"NUMBER_FOR_NEW_INPUT_DATA_FILE") INSERT INTO INPUT VALUES("NUMBER_FOR_NEW_INPUT_DATA_FILE",'"INPUT_DATA_FILENAME.csv"')```
+   ```INSERT INTO FILEINPUT VALUES(NULL,'\','"PATH/INPUT_DATA_FILENAME.csv"',TRUE,TRUE,'','"',',',FALSE,0,FALSE,"NUMBER_FOR_NEW_INPUT_DATA_FILE") INSERT INTO INPUT VALUES("NUMBER_FOR_NEW_INPUT_DATA_FILE",'"PATH/INPUT_DATA_FILENAME.csv"')```
 
 #### Usage
 See official [Wiki][metanome-wiki].
