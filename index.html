@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Metanome-installation-guide by pualien</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Metanome-installation-guide</h1>
+      <h2 class="project-tagline">Step by step installation of Metanome Data Profiling Tool</h2>
+      <a href="https://github.com/pualien/Metanome-Installation-Guide" class="btn">View on GitHub</a>
+      <a href="https://github.com/pualien/Metanome-Installation-Guide/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/pualien/Metanome-Installation-Guide/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="metanome-installation-guide" class="anchor" href="#metanome-installation-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Metanome-Installation-Guide</h1>
+
+<p>Step by step installation of Metanome Data Profiling Tool.</p>
+
+<h2>
+<a id="debian-81" class="anchor" href="#debian-81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Debian 8.1</h2>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p>Download and install Java-JDK-7:</p>
+
+<pre><code>$ sudo apt-get install openjdk-7-jdk
+$ apt-cache search jdk
+</code></pre>
+
+<p>Set up the environment, for example:</p>
+
+<pre><code>$ export JAVA_HOME=/usr/bin/jvm/java-7-openjdk-amd64
+</code></pre>
+
+<p>Download <a href="https://maven.apache.org/download.cgi">Maven.zip</a>, unzip and set up the environment:</p>
+
+<pre><code>$ unzip apache-maven-3.3.9-bin.zip
+$ export PATH=/home/"USER_NAME"/Downloads/apache-maven-3.3.9/bin:$PATH
+</code></pre>
+
+<h4>
+<a id="optional" class="anchor" href="#optional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optional</h4>
+
+<p>Install Node.js, Npm, Bower:</p>
+
+<pre><code>$ apt-get install nodejs-legacy
+$ apt-get install npm
+$ npm install -g bower
+</code></pre>
+
+<h3>
+<a id="metanome-installation" class="anchor" href="#metanome-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Metanome installation</h3>
+
+<p>Download <a href="https://github.com/HPI-Information-Systems/Metanome">Metanome</a>, unzip and install:</p>
+
+<pre><code>$ unzip Metanome-master.zip
+$ cd Metanome-master
+$ mvn clean install
+$ mvn -f deployment/pom.xml package
+</code></pre>
+
+<h3>
+<a id="unzip-metanome-snapshot-packaged-with-jetty-web-server" class="anchor" href="#unzip-metanome-snapshot-packaged-with-jetty-web-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unzip Metanome Snapshot packaged with Jetty Web Server</h3>
+
+<pre><code>$ cd deployment/target
+$ unzip deployment-0.0.2-SNAPSHOT-package_with_jetty.zip
+$ cd deployment-"METANOME_VERSION"-SNAPSHOT
+</code></pre>
+
+<h3>
+<a id="running-metanome" class="anchor" href="#running-metanome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running Metanome</h3>
+
+<pre><code>$ chmod +x run.sh
+$ ./run.sh
+</code></pre>
+
+<p>Or digit:</p>
+
+<pre><code>$ java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml
+</code></pre>
+
+<p>Once server has started go to <a href="http://localhost:8888/">http://localhost:8888/</a></p>
+
+<h2>
+<a id="windows" class="anchor" href="#windows" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Windows</h2>
+
+<h3>
+<a id="dependencies-1" class="anchor" href="#dependencies-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p>Download and install <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java-JDK</a>:</p>
+
+<p>Set up the environment, for example:</p>
+
+<ul>
+<li>c:\Program Files\Java\jdk1.8.0_45 must be in your JAVA_HOME environment variable. You can add directories to your PATH in the control panel; the details vary by Windows version.</li>
+</ul>
+
+<p>Download <a href="https://maven.apache.org/download.cgi">Maven.zip</a>, unzip, copy folder into c:\Program Files\ and set up the environment:</p>
+
+<ul>
+<li>c:\Program Files\apache-maven-"VERSION_NUMBER"\bin must be in your PATH environment variable, just like the J2SE SDK commands. </li>
+</ul>
+
+<h4>
+<a id="optional-1" class="anchor" href="#optional-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optional</h4>
+
+<p>Install Node.js, Npm, Bower:</p>
+
+<ul>
+<li>Download and install <a href="https://nodejs.org/en/">Node.js</a>.</li>
+<li>The npm command-line tool is bundled with Node.js.</li>
+<li>Download and install Bower from command-line interface: <code>&gt; npm install -g bower</code>.</li>
+</ul>
+
+<h3>
+<a id="metanome-installation-1" class="anchor" href="#metanome-installation-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Metanome installation</h3>
+
+<p>Download <a href="https://github.com/HPI-Information-Systems/Metanome">Metanome</a>, unzip <strong>Metanome-master.zip</strong> and then install from command-line interface:</p>
+
+<pre><code>&gt; cd Metanome-master
+&gt; mvn clean install
+&gt; mvn -f deployment/pom.xml package
+</code></pre>
+
+<h3>
+<a id="unzip-metanome-snapshot-packaged-with-jetty-web-server-1" class="anchor" href="#unzip-metanome-snapshot-packaged-with-jetty-web-server-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unzip Metanome Snapshot packaged with Jetty Web Server</h3>
+
+<ul>
+<li><code>&gt; cd deployment/target</code></li>
+<li>Unzip <strong>deployment-0.0.2-SNAPSHOT-package_with_jetty.zip</strong>
+</li>
+<li> <code>&gt; cd deployment-"METANOME_VERSION"-SNAPSHOT</code>
+</li>
+</ul>
+
+<h3>
+<a id="running-metanome-1" class="anchor" href="#running-metanome-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running Metanome</h3>
+
+<ul>
+<li>Open run.bat.</li>
+<li>Or digit from command-line interface: <code>&gt; java -Xmx2g -jar jetty-runner.jar --config WEB-INF/jetty.xml</code>
+</li>
+<li>Once server has started go to <a href="http://localhost:8888/">http://localhost:8888/</a>
+</li>
+</ul>
+
+<h2>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notes</h2>
+
+<h4>
+<a id="input-data" class="anchor" href="#input-data" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Input Data</h4>
+
+<p>If you encounter any problems with Input Data modal and parser:</p>
+
+<ul>
+<li>In <code>deployment-"METANOME_VERSION"-SNAPSHOT/db</code> folder edit <strong>metanomedb.script</strong> file.</li>
+<li>
+<p>add input files by hand in this way:</p>
+
+<p><code>INSERT INTO FILEINPUT VALUES(NULL,'\','"PATH/INPUT_DATA_FILENAME.csv"',TRUE,TRUE,'','"',',',FALSE,0,FALSE,"NUMBER_FOR_NEW_INPUT_DATA_FILE") INSERT INTO INPUT VALUES("NUMBER_FOR_NEW_INPUT_DATA_FILE",'"PATH/INPUT_DATA_FILENAME.csv"')</code></p>
+</li>
+</ul>
+
+<h4>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h4>
+
+<p>See official <a href="https://github.com/HPI-Information-Systems/Metanome/wiki">Wiki</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/pualien/Metanome-Installation-Guide">Metanome-installation-guide</a> is maintained by <a href="https://github.com/pualien">pualien</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
